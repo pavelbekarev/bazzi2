@@ -1,0 +1,227 @@
+.contact__wrapper {
+    background-image: url(../../img/contact.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    justify-content: center;align-items: center;
+    padding: 100px 0;
+
+    .contact-form__wrapper {
+        display: flex;
+        flex-direction: row;
+        opacity: .95;
+        padding: 0 20px;
+
+
+        .offer-to-contact {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;align-items: center;
+            background-color: #22443A;
+            width: 70%;
+            gap: 92px;
+
+            
+            .offer__h2 {
+                font-family: "Roboto-Medium";
+                text-align: center;
+                color: #b4b4b4;
+                letter-spacing: 4px;
+                font-size: 40px;
+                opacity: 1;
+            }
+
+            .socials {
+                display: flex;
+                justify-content: center;align-items: center;
+                gap: 20px;
+
+
+                .form__offer-icon {
+                    border: 1px #858585 solid;
+                    border-radius: 40px;
+                    padding: 10px;
+                    width: 80px;
+                    height: 80px;
+                    background-color: white;
+                }
+            }
+        }
+
+
+        .form__booking {
+            padding-top: 72px;
+            width: 100%;
+            background-color: #D9D9D9;
+
+
+            .booking__h2 {
+                text-align: center;
+                color: #000000;
+                font-size: 40px;
+                font-family: "Roboto-Medium";
+                letter-spacing: 3px;
+                font-weight: 400;
+            }
+
+            .form__booking-data {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 100%;
+                padding-right: 61px;
+                padding-left: 61px;
+                padding-top: 61px;
+                gap: 20px;
+
+
+                .input__wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    gap: 14px;
+
+
+                    .booking__label {
+                        text-align: right;
+                        font-size: 20px;
+                        font-family: "Roboto-Medium";
+                        font-weight: 300;
+                        opacity: .6;
+                        letter-spacing: 2px;
+                    }
+
+
+                    .booking__input {
+                        font-size: 24px;
+                        color: #000000;
+                        height: 51px;
+                        background-color: transparent;
+                        border: none;
+                        border-bottom: 1px #858585 solid;
+                        border-radius: 4px;
+                        outline: none;
+                        transition: outline 1s ease-out;
+
+
+                        &:focus {
+                            border-bottom: 1px #22443A solid;
+                            transition: border-bottom 0.3s ease;
+                        }
+                    }
+                }
+            }
+
+            .book-button {
+                display: flex;
+                width: 50%;
+                justify-content: center;
+                align-items: center;
+                margin: 85px auto;                
+                padding: 14px 48px;
+                border-radius: 7px;
+                // outline: 1px solid black;
+                border: none;
+                
+                font-size: 24px;
+                color: #22443A;
+                font-family: "Roboto-Bold";
+                letter-spacing: 2px;
+
+
+                &:hover,
+                &:focus {
+                    background-color: #22443A;
+                    color: white;
+                    transition: all 0.3s ease-out;
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 730px) {
+    .contact__wrapper .contact-form__wrapper .offer-to-contact .offer__h2 {
+        font-size: 32px;
+        transition: all 0.3s ease;
+    }
+    
+    .contact__wrapper .contact-form__wrapper .offer-to-contact .socials .form__offer-icon {
+        width: 70px;
+        height: 70px;
+        transition: all 0.3s ease;
+    }
+}
+
+@media (max-width: 680px) {
+    .contact__wrapper .contact-form__wrapper .form__booking .form__booking-data {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+
+@media (max-width: 620px) {
+    .contact__wrapper .contact-form__wrapper {
+        display: grid;
+        grid-template-areas: 
+            "item1"
+            "item2";
+    }
+
+    .contact__wrapper .contact-form__wrapper .form__booking .booking__h2 {
+        padding: 0 20px;
+    }
+
+    .contact__wrapper .contact-form__wrapper .offer-to-contact {
+        grid-area: item2;
+        width: 100%;
+        
+    }
+
+    .contact__wrapper .contact-form__wrapper .offer-to-contact .offer__h2 {
+        margin-top: 30px;
+    }
+
+    .contact__wrapper .contact-form__wrapper .offer-to-contact .socials {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 410px) {
+    .contact__wrapper .contact-form__wrapper {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 388px) {
+    .contact__wrapper .contact-form__wrapper {
+        padding: 0 5px;
+    }
+}
+
+@media (max-width: 376px) {
+    .contact__wrapper .contact-form__wrapper .form__booking .form__booking-data {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+
+@media (max-width: 356px) {
+    .contact__wrapper .contact-form__wrapper .form__booking .form__booking-data {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .contact__wrapper .contact-form__wrapper .form__booking .booking__h2 {
+        padding: 0 20px;
+    }
+
+    .contact__wrapper .contact-form__wrapper .form__booking .book-button {
+        width: 70%;
+    }
+}
