@@ -81,10 +81,13 @@
 
         .service__item-image {
             width: 60%;
+            // height: 100%;
             margin: 0 auto;
             padding: 7px 7px 0px 7px;
             border-radius: 10px;
-            transition: transform .3s ease
+            transition: transform .3s ease;
+            // background-size: contain;
+            // background-repeat: no-repeat;
         }
 
         .service__item-image:last-child {

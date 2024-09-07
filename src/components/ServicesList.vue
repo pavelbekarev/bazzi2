@@ -1,10 +1,12 @@
 <script setup>
-    defineProps({
-        service: Object
+    const props = defineProps({
+        serviceObject: Object
     })
 
     import ServiceComponent from './ServiceComponent.vue';
     import { onUpdated, ref } from 'vue';
+
+    console.log(props.serviceObject)
 
     const modalWindow_active = ref(false);
     onUpdated(() => {
@@ -15,10 +17,6 @@
 
 <template>
     <ServiceComponent 
-        :tabindex="service.index" 
-        :name="service.name" 
-        :description="service.description" 
-        :image-path="service.imagePath" 
+        :service = props.serviceObject
     />
-    
 </template>
