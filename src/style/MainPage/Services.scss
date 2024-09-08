@@ -38,7 +38,6 @@
 
     // background: rgb(89,75,51);
     // background: linear-gradient(135deg, rgba(89,75,51,1) 5%, rgba(112,94,64,1) 25%, rgba(42,100,83,1) 75%, rgba(32,77,64,1) 95%);
-    
 }
 
 .services__content {
@@ -47,7 +46,7 @@
     flex-direction: column;
     padding-bottom: 100px;
     z-index: 10;
-    overflow-y: hidden;
+    // overflow-y: hidden;
 
     .services__h2 {
         margin: 3em auto;
@@ -73,7 +72,7 @@
         align-items: center;
         max-width: 370px;
         height: 30em;
-        overflow-y: hidden;
+        // overflow-y: hidden;
         background-color: #22443A;
         transition: all 0.3s ease;
         border: 3px #b2b2b2 solid;
@@ -197,4 +196,11 @@
     .services__content .service__item-wrapper .read-more__button {
         display: block;
     }
+}
+
+
+@media (max-width: 320px) {
+    // .services__content .service__item-wrapper {
+        
+    // }
 }
