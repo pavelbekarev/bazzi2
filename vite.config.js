@@ -4,7 +4,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: "/bazzi2/",
+  base: "/bazzi2/",
+  publicPath: process.env.NODE_ENV === "production" ? "/bazzi2/" : "/",
   plugins: [
     vue(),
   ],
