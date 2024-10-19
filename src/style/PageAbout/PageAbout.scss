@@ -1,3 +1,18 @@
+@keyframes ieroglifBackground {
+    0% {
+        opacity: .05;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        opacity: .05;
+        transform: scale(1.2);
+        transform: rotate(75deg);
+    }
+}
+
+
 .header {
     background-color: #22443A;
     height: 10em;
@@ -19,10 +34,23 @@
 
 
 .about__content-wrapper {
+    position: relative;
     display: grid;
     grid-template-areas: "item1 item2";
-    // flex-direction: row;
     height: 55em;
+    z-index: 2;
+
+    .ieroglifBackground {
+        animation: ieroglifBackground 15s infinite;
+        position: absolute; 
+        top: 10rem;
+        right: 5rem;
+        background: url("../../img/ieroglifBackground.png") no-repeat;
+        background-size: contain;
+        width: 30%;
+        z-index: 1;
+        opacity: 0.05;
+    }
 
     .item1 {
         grid-area: item1;
@@ -64,7 +92,7 @@
             }
 
             h2 {
-                font-size: 48px;
+                font-size: 2rem;
                 font-family: "Roboto-Medium";
                 font-weight: 300;
                 letter-spacing: 2px;
@@ -86,7 +114,7 @@
     background-color: #22443A;
 
     .element__h1 {
-        font-size: 48px;
+        font-size: 2rem;
         color: #C9C9C9;
         font-family: "Roboto-Bold";
         font-weight: 300;
@@ -110,7 +138,7 @@
             width: 50%;
 
             .element__p {
-                font-size: 32px;
+                font-size:1.5rem;
                 font-family: "Roboto-Light";
                 text-align: left;
                 color: #C9C9C9;
@@ -134,7 +162,7 @@
     padding-bottom: 100px;
 
     .guide__h1 {
-        font-size: 48px;
+        font-size: 2rem;
         color: #C9C9C9;
         font-family: "Roboto-Medium";
         font-weight: 300;
@@ -180,7 +208,7 @@
             .guide__descr {
                 font-family: "Roboto-Medium";
                 color: #C9C9C9;
-                font-size: 24px;
+                font-size: 1rem;
                 text-align: center;
             }
         }
@@ -314,7 +342,7 @@
 
     .element__wrapper .element__content-wrapper .text-content {
         grid-area: item2;
-        margin: 0 auto;
+        margin: 20px auto;
         width: 100%;
     }
 
@@ -335,6 +363,10 @@
     .about__content-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .ieroglifBackground {
+        display: none;
     }
 
     .about__content-wrapper .item2 .content__wrapper {
@@ -364,5 +396,12 @@
 @media (max-width: 420px) {
     .element__wrapper .element__content-wrapper .image-content {
         background-size: contain;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .element__wrapper .element__content-wrapper .image-content {
+        height: 24rem;
     }
 }

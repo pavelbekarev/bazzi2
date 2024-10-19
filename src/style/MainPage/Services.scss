@@ -30,14 +30,10 @@
 
 
 .services__wrapper {
-    // background-color: #2A6453;
     background: rgb(89,75,51);
     background: linear-gradient(135deg, rgba(89,75,51,1) 12%, rgba(112,94,64,1) 37%, rgba(42,100,83,1) 63%, rgba(32,77,64,1) 88%);
     background-size: 200% 200%;
     animation: bgAnimated 5s infinite alternate;
-
-    // background: rgb(89,75,51);
-    // background: linear-gradient(135deg, rgba(89,75,51,1) 5%, rgba(112,94,64,1) 25%, rgba(42,100,83,1) 75%, rgba(32,77,64,1) 95%);
 }
 
 .services__content {
@@ -46,7 +42,6 @@
     flex-direction: column;
     padding-bottom: 100px;
     z-index: 10;
-    // overflow-y: hidden;
 
     .services__h2 {
         margin: 3em auto;
