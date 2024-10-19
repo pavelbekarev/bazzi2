@@ -174,7 +174,7 @@
             descriptionAfter: "",
             imagePath: pinkSea,
             format: "текст или аудио-голосовые",
-            price: "1830 ₽"
+            price: "1300 ₽"
         },
     ];
 
