@@ -82,9 +82,6 @@
     }
 }
 
-
-
-
 .element__wrapper {
     background-color: #22443A;
 
@@ -108,8 +105,6 @@
         align-items: center;
         // height: 10em;
 
-
-
         .text-content {
             grid-area: item1;
             width: 50%;
@@ -117,11 +112,10 @@
             .element__p {
                 font-size: 32px;
                 font-family: "Roboto-Light";
-                text-align: justify;
+                text-align: left;
                 color: #C9C9C9;
             }
         }
-
 
         .image-content {
             grid-area: item2;
@@ -138,7 +132,6 @@
 .guide__wrapper {
     background-color: #22443A;
     padding-bottom: 100px;
-
 
     .guide__h1 {
         font-size: 48px;
@@ -158,8 +151,6 @@
         width: 100%;
         margin-bottom: 50px;
 
-
-
         .step {
             position: relative;
             display: flex;
@@ -168,9 +159,6 @@
             align-items: center;
             width: 15em;
             gap: 2em;
-
-           
-
 
             .guide__image {
                 display: flex;
@@ -216,23 +204,14 @@
         font-size: 20px;
     }
 
-
     .element__wrapper .element__content-wrapper .text-content .element__p {
         font-size: 24px;
     }
 
-
     .element__wrapper .element__content-wrapper {
-        gap: 50px;
+        gap: 5px;
         padding: 0 20px;
     }
-
-
-    .element__wrapper .element__content-wrapper .image-content {
-        background-size: contain;
-    }
-
-
 }
 
 
@@ -303,10 +282,6 @@
         }
     }
 
-    .guide__wrapper .guide-steps__wrapper .step .guide__descr {
-        text-align: justify;
-    }
-
     .guide__wrapper .guide-steps__wrapper .step .guide__image {
         display: none;
     }
@@ -329,19 +304,12 @@
     .about__content-wrapper .item2 .content__wrapper {
         padding: 0 10px;
     }
-}
 
-
-@media (max-width: 636px) {
     .element__wrapper .element__content-wrapper {
         display: grid;
         grid-template-areas: 
             "item1"
             "item2";
-    }
-
-    .header__wrapper .header__menu ul {
-        gap: 1vh;
     }
 
     .element__wrapper .element__content-wrapper .text-content {
@@ -353,6 +321,12 @@
     .element__wrapper .element__content-wrapper .image-content {
         grid-area: item1;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 636px) {
+    .header__wrapper .header__menu ul {
+        gap: 1vh;
     }
 }
 
@@ -383,5 +357,12 @@
 @media (max-width: 440px) {
     .element__wrapper .element__content-wrapper .image-content {
         width: 100%;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .element__wrapper .element__content-wrapper .image-content {
+        background-size: contain;
     }
 }
