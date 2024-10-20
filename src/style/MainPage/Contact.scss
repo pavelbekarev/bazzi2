@@ -22,7 +22,7 @@
             align-items: center;
             background-color: #22443A;
             width: 70%;
-            gap: 92px;
+            gap: 40px;
 
             
             .offer__h2 {
@@ -37,7 +37,8 @@
 
             .socials {
                 display: flex;
-                justify-content: center;align-items: center;
+                justify-content: center;
+                align-items: center;
                 gap: 20px;
 
 
@@ -182,7 +183,7 @@
     .contact__wrapper .contact-form__wrapper .offer-to-contact {
         grid-area: item2;
         width: 100%;
-        
+        gap: 40px;
     }
 
     .contact__wrapper .contact-form__wrapper .offer-to-contact .offer__h2 {

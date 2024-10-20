@@ -1,3 +1,18 @@
+@keyframes ieroglifBackground {
+    0% {
+        opacity: .05;
+        transform: scale(1);
+        transform: rotate(0deg);
+    }
+
+    50% {
+        opacity: .05;
+        transform: scale(1.2);
+        transform: rotate(75deg);
+    }
+}
+
+
 .header {
     background-color: #22443A;
     height: 10em;
@@ -19,10 +34,23 @@
 
 
 .about__content-wrapper {
+    position: relative;
     display: grid;
     grid-template-areas: "item1 item2";
-    // flex-direction: row;
     height: 55em;
+    z-index: 2;
+
+    .ieroglifBackground {
+        animation: ieroglifBackground 15s infinite;
+        position: absolute; 
+        top: 10rem;
+        right: 20%;
+        background: url("../../img/ieroglifBackground.png") no-repeat;
+        background-size: contain;
+        width: 20%;
+        z-index: 1;
+        opacity: 0.05;
+    }
 
     .item1 {
         grid-area: item1;
@@ -42,7 +70,6 @@
         .content__wrapper {
             position: absolute;
             bottom: 0;
-            left: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -64,7 +91,7 @@
             }
 
             h2 {
-                font-size: 48px;
+                font-size: 2rem;
                 font-family: "Roboto-Medium";
                 font-weight: 300;
                 letter-spacing: 2px;
@@ -82,14 +109,11 @@
     }
 }
 
-
-
-
 .element__wrapper {
     background-color: #22443A;
 
     .element__h1 {
-        font-size: 48px;
+        font-size: 2rem;
         color: #C9C9C9;
         font-family: "Roboto-Bold";
         font-weight: 300;
@@ -108,20 +132,17 @@
         align-items: center;
         // height: 10em;
 
-
-
         .text-content {
             grid-area: item1;
             width: 50%;
 
             .element__p {
-                font-size: 32px;
+                font-size:1.5rem;
                 font-family: "Roboto-Light";
-                text-align: justify;
+                text-align: left;
                 color: #C9C9C9;
             }
         }
-
 
         .image-content {
             grid-area: item2;
@@ -139,9 +160,8 @@
     background-color: #22443A;
     padding-bottom: 100px;
 
-
     .guide__h1 {
-        font-size: 48px;
+        font-size: 2rem;
         color: #C9C9C9;
         font-family: "Roboto-Medium";
         font-weight: 300;
@@ -158,8 +178,6 @@
         width: 100%;
         margin-bottom: 50px;
 
-
-
         .step {
             position: relative;
             display: flex;
@@ -168,9 +186,6 @@
             align-items: center;
             width: 15em;
             gap: 2em;
-
-           
-
 
             .guide__image {
                 display: flex;
@@ -192,7 +207,7 @@
             .guide__descr {
                 font-family: "Roboto-Medium";
                 color: #C9C9C9;
-                font-size: 24px;
+                font-size: 1rem;
                 text-align: center;
             }
         }
@@ -216,23 +231,14 @@
         font-size: 20px;
     }
 
-
     .element__wrapper .element__content-wrapper .text-content .element__p {
         font-size: 24px;
     }
 
-
     .element__wrapper .element__content-wrapper {
-        gap: 50px;
+        gap: 5px;
         padding: 0 20px;
     }
-
-
-    .element__wrapper .element__content-wrapper .image-content {
-        background-size: contain;
-    }
-
-
 }
 
 
@@ -303,10 +309,6 @@
         }
     }
 
-    .guide__wrapper .guide-steps__wrapper .step .guide__descr {
-        text-align: justify;
-    }
-
     .guide__wrapper .guide-steps__wrapper .step .guide__image {
         display: none;
     }
@@ -329,10 +331,7 @@
     .about__content-wrapper .item2 .content__wrapper {
         padding: 0 10px;
     }
-}
 
-
-@media (max-width: 636px) {
     .element__wrapper .element__content-wrapper {
         display: grid;
         grid-template-areas: 
@@ -340,13 +339,9 @@
             "item2";
     }
 
-    .header__wrapper .header__menu ul {
-        gap: 1vh;
-    }
-
     .element__wrapper .element__content-wrapper .text-content {
         grid-area: item2;
-        margin: 0 auto;
+        margin: 20px auto;
         width: 100%;
     }
 
@@ -356,11 +351,21 @@
     }
 }
 
+@media (max-width: 636px) {
+    .header__wrapper .header__menu ul {
+        gap: 1vh;
+    }
+}
+
 
 @media (max-width: 585px) {
     .about__content-wrapper {
         display: flex;
         flex-direction: column;
+    }
+
+    .ieroglifBackground {
+        display: none;
     }
 
     .about__content-wrapper .item2 .content__wrapper {
@@ -383,5 +388,19 @@
 @media (max-width: 440px) {
     .element__wrapper .element__content-wrapper .image-content {
         width: 100%;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .element__wrapper .element__content-wrapper .image-content {
+        background-size: contain;
+    }
+}
+
+
+@media (max-width: 420px) {
+    .element__wrapper .element__content-wrapper .image-content {
+        height: 24rem;
     }
 }

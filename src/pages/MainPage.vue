@@ -3,6 +3,7 @@
     import ContactForm from '../components/ContactForm/ContactForm.vue';
 
     import ServicesList from '../components/ServicesList.vue';
+    // import Slider from '@/components/Slider.vue';
 
     import services from "../utils/ListOfServices.vue"; 
 
@@ -23,6 +24,7 @@
     }
 
     const servicesList = ref(services);
+
 </script>
 
 <template>
@@ -57,8 +59,6 @@
           </div>
         </div>
       </header>
-    
-    
       <main >
         <section>
           <div class="services__wrapper">
@@ -70,10 +70,6 @@
                     <ServicesList 
                         :service-object="service"
                     />
-                    <!-- <div class="service__item-image" :style="{background: 'url(' + service.imagePath + ')'}"> -->
-                    <!-- </div> -->
-                    <!-- <h3 class="service__item-h3">{{ service.name }}</h3>
-                    <p class="service__item-description" >{{ service.description }}</p> -->
                     <a 
                       @click="clickReadMore_button(service)"
                       id="read-more__button" 
@@ -97,6 +93,12 @@
                       х
                     </span>
                     <h2 class="content-h2">{{ activeService.name }}</h2>
+                    <p 
+                      v-if="activeService.description" 
+                      class="content-description"
+                    >
+                      {{ activeService.description }}
+                    </p>
                     <ul 
                       v-for="point of activeService.description_points" 
                       :key="point.index" 
@@ -134,5 +136,4 @@
           </div>
         </section>
       </main>
-
 </template>

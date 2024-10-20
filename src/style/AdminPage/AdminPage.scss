@@ -1,0 +1,25 @@
+.ref__container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+
+.ref__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 70vh;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: bisque;
+
+
+    .service__item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}

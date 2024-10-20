@@ -16,10 +16,10 @@ console.log(bgImage);
 </script>
 
 <template>
-    <img class="service__item-image" :src=props.service.imagePath alt="Logo">
-    <!-- <div class="service__item-image" :style="{backgroundImage: 'url(' + bgImage + ')'}">
-
-    </div> -->
+    
+    <img v-if="props.service.imagePath" class="service__item-image" :src=props.service.imagePath alt="Logo">
     <h3 class="service__item-h3">{{ props.service.name }}</h3>
-    <p class="service__item-description" >{{ props.service.description }}</p>
+    <p class="service__item-description" >
+        {{ props.service.shortDescription }}
+    </p>
 </template>

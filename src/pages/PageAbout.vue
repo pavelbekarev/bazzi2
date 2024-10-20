@@ -61,6 +61,7 @@ onBeforeMount(() => {
     <main>
         <!-- section about -->
         <section class="about__content-wrapper">
+            <img class="ieroglifBackground" src="../img/ieroglifBackground.png" alt="">
             <div class="item1">
             </div> <!-- image -->
             <div class="item2">
