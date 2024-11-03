@@ -17,6 +17,6 @@
 
 <template>
     <ServiceComponent 
-        :service = props.serviceObject
+        :serviceObject = props.serviceObject
     />
 </template>

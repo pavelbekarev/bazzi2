@@ -83,8 +83,9 @@
             <input v-model="formData.description" title="service.name" id="description" type="text">
         </div>
         
+
         <div>
-            <label for="#descriptionPoints">Дополнительная информация об услуге</label>
+            <label for="#descriptionPoints">Информация об услуге (обязательно каждое предложение через ";")<br/></label>
             <input v-model="formData.descriptionPoints" title="service.name" id="descriptionPoints" type="text">
         </div>
         

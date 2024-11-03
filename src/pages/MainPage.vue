@@ -1,31 +1,52 @@
 <script setup>
-    import { ref } from 'vue';
-    import ContactForm from '../components/ContactForm/ContactForm.vue';
+  import { computed, ref, onMounted, watch, watchEffect } from 'vue';
+  import ContactForm from '../components/ContactForm/ContactForm.vue';
 
-    import ServicesList from '../components/ServicesList.vue';
-    // import Slider from '@/components/Slider.vue';
+  import ServicesList from '../components/ServicesList.vue';
+  // import Slider from '@/components/Slider.vue';
 
-    import services from "../utils/ListOfServices.vue"; 
+  // import services from "../utils/ListOfServices.vue"; 
+  import { useStore } from 'vuex';
+  import ServiceComponent from '@/components/ServiceComponent.vue';
+  import { splitDescriptionPoints } from '@/utils/splitDescriptionPoints';
 
-    const modalWindow_active = ref(false);
-    const activeService = ref(null);
+  const store = useStore();
 
-    // Закрытие модального окна при клике на крестик 
-    const closeModalWindow_button = () => {
-      modalWindow_active.value = false;
-      activeService.value = null;
-      document.body.classList.remove('no-scroll')
-    }
-    // Открытие модального окна при клике на "Читать подробнее"
-    const clickReadMore_button = (service) => {
-      modalWindow_active.value = true;
-      activeService.value = service;
-      document.body.classList.add('no-scroll')
-    }
+  const servicesJson = computed(() => {
+    return JSON.stringify(store.state.ServiceModule.serviceState, null, 2);
+  });
 
-    const servicesList = ref(services);
+  const images = computed(() => {
+    return JSON.stringify(store.state.ImageModule.allImages, null, 2);
+  });
 
+  onMounted(() => {
+    store.dispatch("ServiceModule/getServeFromServer");
+  });
+
+  const services = computed(() => {
+    return JSON.parse(servicesJson.value);
+  });
+
+  const modalWindow_active = ref(false);
+  const activeService = ref(null);
+
+  // Закрытие модального окна при клике на крестик 
+  const closeModalWindow_button = () => {
+    modalWindow_active.value = false;
+    activeService.value = null;
+    document.body.classList.remove('no-scroll');
+  }
+  // Открытие модального окна при клике на "Читать подробнее"
+  const clickReadMore_button = (service) => {
+    modalWindow_active.value = true;
+    activeService.value = service;
+    document.body.classList.add('no-scroll')
+  }
+
+  const servicesList = ref(services);
 </script>
+
 
 <template>
     <header>
@@ -59,7 +80,7 @@
           </div>
         </div>
       </header>
-      <main >
+      <main>
         <section>
           <div class="services__wrapper">
             <div class="container">
@@ -67,8 +88,8 @@
                 <h2 class="services__h2">Услуги</h2>
                 <div class="services">
                   <div v-for="service of servicesList" :key="service.name" class="service__item-wrapper">
-                    <ServicesList 
-                        :service-object="service"
+                    <ServiceComponent 
+                      :service-object="service"
                     />
                     <a 
                       @click="clickReadMore_button(service)"
@@ -100,12 +121,11 @@
                       {{ activeService.description }}
                     </p>
                     <ul 
-                      v-for="point of activeService.description_points" 
-                      :key="point.index" 
+                      v-for="point of splitDescriptionPoints(activeService.descriptionPoints)"
+                      :key="point.index"
                       class="content-list"
                     >
                       <li class="content-list__item">{{point}}</li>
-                      
                     </ul>
                     <div class="additionally-info">
                       <p>Формат: {{ activeService.format }}</p>
