@@ -1,11 +1,6 @@
 <script setup>
   import { computed, ref, onMounted, watch, watchEffect } from 'vue';
   import ContactForm from '../components/ContactForm/ContactForm.vue';
-
-  import ServicesList from '../components/ServicesList.vue';
-  // import Slider from '@/components/Slider.vue';
-
-  // import services from "../utils/ListOfServices.vue"; 
   import { useStore } from 'vuex';
   import ServiceComponent from '@/components/ServiceComponent.vue';
   import { splitDescriptionPoints } from '@/utils/splitDescriptionPoints';

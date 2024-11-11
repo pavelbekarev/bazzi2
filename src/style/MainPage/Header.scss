@@ -27,17 +27,16 @@
         background-size: cover;
     }
 }
-
 .header__bg {
+    --headerLinkFontSize: 2rem;
+    --headerLinkGap: 5rem;
     padding-bottom: 150px;
     position: relative;
     width: 100%;
     height: 100vh;
     background: url("@/img/main_header-4.jpg") no-repeat;
-    // animation: header_bg_animation 15s infinite;
     background-position: 30% 20%;
     background-size: cover;
-    // opacity: .85;
 }
 
 .container {
@@ -52,19 +51,16 @@
     width: 100%;
     height: 100%;
 
-
     .header__menu {
         width: 100%;
         padding: 0 20px;
-
 
         ul {
             display: flex;
             justify-content: left;
             align-items: center;
-            gap: 5vh;
-            height: 10vh;
-
+            gap: var(--headerLinkGap);
+            height: 10rem;
 
             li {
                 list-style: none;
@@ -79,6 +75,7 @@
                     color: #F9F8CF;
                     font-family: "Roboto-Regular";
                     font-weight: 100;
+                    font-size: var(--headerLinkFontSize);
                     letter-spacing: 3px;
                 }
             }
@@ -86,20 +83,16 @@
     }
 }
 
-
 .burger__wrapper {
     display: flex;
     width: 100%;
     background-color: white;
-
 
     .burger__line {
         width: 100px;
         background-color: white;
     }
 }
-
-
 
 .header__content {
     position: relative;
@@ -112,9 +105,9 @@
 
 
     .header__h2 {
-        width: 15em;
+        width: 15em;  
         color: #F9F8CF;
-        font-size: 2.5em;
+        font-size: 5rem;
         font-family: "Roboto-Medium";
         font-weight: 300;
         padding: 10px;
@@ -128,8 +121,6 @@
         margin-top: 45%;
     
         .header__h2 {
-            // font-size: 2em;
-            // transform: translateY(100%);
             transition: all .3s ease;
         }
     }
@@ -138,53 +129,41 @@
 
 @media (max-width: 900px) {
     .header__content .header__h2 {
-        font-size: 36px;
+        font-size: 5rem;
         width: 100%;
     }
 }
 
 
-
 @media (max-width: 775px) {
     .header__content .header__h2 {
-        font-size: 30px;
+        font-size: 4rem;
         margin-top: 10%;
     }
 }
 
 
 @media (max-width: 600px) {
-    .header__bg {
-        // background-position: 30% 40%;
-    }
-
     .header__content .header__h2 {
-        font-size: 30px;
         margin-top: 20%;
-        // padding: 20px;
     }
 }
 
 
 @media (max-width: 560px) {
     .header__bg {
-        // background-position: 50% 40%;
         transition: all .3s ease;
     }
 
 
     .header__content .header__h2 {
-        font-size: 30px;
         margin-top: 40%;
-        // padding: 20px;
     }
 }
 
 
 @media (max-width: 390px) {
     .header__content .header__h2 {
-        font-size: 30px;
         margin-top: 60%;
-        // padding: 20px;
     }
 }

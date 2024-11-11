@@ -1,0 +1,33 @@
+.adminPageContent {
+  --adminPageContentBorderRadius: 1rem;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10rem;
+    margin-bottom: 16rem;
+
+    &__activeService {
+      margin-left: 5rem;
+      font-size: 4rem;
+    }
+
+    &__addNewButton {
+      font-size: 3rem;
+      padding: 10px 20px;
+      background-color: #429B30;
+      color: #fff;
+      font-family: "Roboto-Medium";
+      border-radius: var(--adminPageContentBorderRadius);
+      cursor: pointer;
+
+      &:hover {
+        background-color: #37b71e;
+        transition: all 0.3s ease;
+      }
+    }
+  }
+}

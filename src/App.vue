@@ -6,6 +6,4 @@
 </template>
 
 <style lang="scss" src="./style/App.scss">
-
-
 </style>

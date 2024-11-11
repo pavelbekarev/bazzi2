@@ -1,0 +1,1 @@
+export { AdminPageContent } from "./ui/AdminPageContent.vue";

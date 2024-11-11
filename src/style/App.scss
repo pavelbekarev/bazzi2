@@ -4,9 +4,8 @@
 @import "./MainPage/Contact.scss";
 @import "./MainPage/ModalWindow.scss";
 @import "./MainPage/Slider.scss";
-
 @import "../style/PageAbout/PageAbout.scss";
-
+@import "../style/AdminPage/AdminPage.scss";
 
 *, *::after, *::before {
     margin: 0;
@@ -16,5 +15,14 @@
 
 html, body {
     height: 100%;
+    font: var(--baseFontWeight) var(--baseFontSize) / var(--baseLineHeight)
+    var(--baseFontFamily);
 }
 
+:root {
+    --baseFontSize: 8px; /* 1rem */
+    --baseFontFamily: sans-serif;
+    --baseLineHeight: 1.5;
+    --baseFontWeight: normal;
+  }
+  
